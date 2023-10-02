@@ -1,0 +1,157 @@
+#!/bin/bash
+<<comment
+Este kit de herramientas contiene materiales que pueden ser potencialmente dañinos o peligrosos para las redes sociales. 
+Consulte las leyes de su provincia / país antes de acceder, usar o utilizar de cualquier otra manera esto de manera incorrecta.
+comment
+#Creador:KevinVarSa
+#Usuario:ScriptProdigy
+#Uso ilegal de esta herramienta no es responsabilidad del creador
+#COLORS
+dic="zphisher"
+dic2="Doxxer-Toolkit"
+white="\e[1;37m"
+system="\e[1;31m"
+
+# FUNCIONES
+
+phishing() {
+
+cd ${dic} || exit 1
+source zphisher.sh
+
+}
+phone(){
+
+source phone
+}
+ip() {
+
+ruby ip
+
+}
+dns() {
+
+source dns
+}
+doxx() {
+
+# Verificar si Python ya está instalado
+if ! command -v python &>/dev/null; then
+    echo "Instalando python..."
+    apt install python -y
+
+# Verificar si Python 3 ya está instalado
+elif ! command -v python3 &>/dev/null; then
+    echo "Instalando python3..."
+    apt install python3 -y
+
+# Verificar si PHP ya está instalado
+elif ! command -v php &>/dev/null; then
+    echo "Instalando php..."
+    apt install php -y
+
+# Verificar si pip3 ya está instalado
+elif ! command -v pip3 &>/dev/null; then
+    echo "Instalando pip3..."
+    wget https://bootstrap.pypa.io/get-pip.py
+    python3 get-pip.py
+    rm get-pip.py
+
+# Instalar requerimientos (sin verificar)
+echo -e "\nInstalando requerimientos..."
+pip3 install -r requirements.txt
+else
+ cd ${dic2} || exit 1
+ python3 dox.py
+fi
+}
+#INSTALACION
+if [ -d ${dic} ];then
+  echo  "--------------------"
+else
+git clone --depth=1 https://github.com/htr-tech/zphisher.git
+fi
+if [ -d ${dic2} ];then
+  echo  "--------------------"
+else
+git clone https://github.com/Euronymou5/Doxxer-Toolkit
+fi
+banner() {
+
+
+echo -e ${system}" ██▒   █▓ ▄▄▄       ██▓    ▄▄▄       ██ ▄█▀   "
+echo -e ${system}"▓██░   █▒▒████▄    ▓██▒   ▒████▄     ██▄█▒    "
+echo -e ${system}" ▓██  █▒░▒██  ▀█▄  ▒██░   ▒██  ▀█▄  ▓███▄░    "
+echo -e ${system}"  ▒██ █░░░██▄▄▄▄██ ▒██░   ░██▄▄▄▄██ ▓██ █▄    "
+echo -e ${system}"   ▒▀█░   ▓█   ▓██▒░██████▒▓█   ▓██▒▒██▒ █▄   "
+echo -e ${system}"   ░ ▐░   ▒▒   ▓▒█░░ ▒░▓  ░▒▒   ▓▒█░▒ ▒▒ ▓▒   "
+echo -e ${system}"   ░ ░░    ▒   ▒▒ ░░ ░ ▒  ░ ▒   ▒▒ ░░ ░▒ ▒░   " 
+echo -e ${system}"     ░░    ░   ▒     ░ ░    ░   ▒   ░ ░░ ░    "
+echo -e ${system}"      ░        ░  ░    ░  ░     ░  ░░  ░      "
+echo -e ${system}"     ░                ${white}     (by:KevinVarSa)                   "
+
+
+
+
+}
+
+#SALUDO AL ASISTENTE DE HERRAMIENTAS
+echo -e ${white} " "
+read -p "<<: " saludo
+#FUNCION DE REPEAT POR SI COMETE UN ERROR
+#CASE PARA SALUDO AL ASISTENTE CORRECTAMENTE
+case ${saludo} in
+  "start list")     echo -e  ""
+             echo -n "      CARGANDO HERRAMIENTAS DE HACKING "
+              #FOR PARA CARGAR UNA BARRA DEL 0% AL 100%
+             for i in {0..101}; do
+             sleep 0.04s  # Simula un proceso en curso
+            echo -ne "\r[$i%]"
+           done
+            clear
+repeat(){
+            #BANNER
+             banner
+            #LISTA DE HERRAMIENTAS
+           echo -e "${system}[${white}1${system}] ${white}Phishing"
+           sleep 0.3
+           echo -e "${system}[${white}2${system}] ${white}InPhone"
+           sleep 0.3
+           echo -e "${system}[${white}3${system}] ${white}InfoIp"
+           sleep 0.3
+           echo -e "${system}[${white}4${system}] ${white}InfoWeb"
+           sleep 0.3
+           echo -e "${system}[${white}5${system}] ${white}Doxxing"
+           sleep 0.3
+           echo -e "${system}[${white}6${system}] ${white}Exit"
+           sleep 0.3
+
+          read -p "Porfavor escoge una herramienta: "
+
+#CASE PARA SELECCION DE OPCIONES Y EJECUCIONES
+case ${REPLY} in
+ 1) clear
+    phishing;;
+ 2) clear
+    phone;;
+ 3) clear
+    ip;;
+ 4) clear
+    dns;;
+ 5) clear
+    doxx;;
+ 6) exit;; 
+ *)echo "Opcion incorrecta. Intente nuevamente"
+ sleep 1
+  clear
+  repeat
+  ;;
+esac
+}
+#LLAMANDO FUNCION
+repeat
+;;
+*) echo "comando no valido. "
+;;
+esac
+

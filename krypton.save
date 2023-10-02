@@ -1,0 +1,44 @@
+#!/bin/bash
+#INgrese la contraseña
+phishing() {
+
+source kevphish
+}
+
+
+
+if [ "$1" -eq "123" ];then
+listas=(1:hola_mundo 2:script 3:Hacking 4:Bash 5:Ruby 6:Salir)
+name() {
+
+  echo "Ingrese su nombre porfavor"
+   read -p "nombre: " nombre
+}
+name
+echo "Saluda a Krypton con 'hola'"
+read -p "saludo: " saludo
+
+case ${saludo} in
+
+  h???|H???)clear
+            echo "Hola ${nombre} bienvenido, soy tu asistente Krypton"
+              echo ""
+            sleep 1
+            echo "A continuacion te mostrare la lista de menus disponibles"
+             sleep 2
+            clear
+             for lista in ${listas[@]};do
+            sleep 0.3
+            echo ${lista}
+           done
+        read -p "Porfavor escoge una: " 
+         ;;
+esac
+case ${REPLY} in
+ 1) phishing;;
+ 2) echo "T eneseñare bash script";;
+ 3) echo "Hackeemos la nasa :D";;
+esac
+else
+   exit
+fi

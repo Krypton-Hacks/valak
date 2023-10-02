@@ -1,0 +1,26 @@
+{"level":"info","time":"2023-10-02T17:51:25Z","message":"Thank you for trying Cloudflare Tunnel. Doing so, without a Cloudflare account, is a quick way to experiment and try it out. However, be aware that these account-less Tunnels have no uptime guarantee. If you intend to use Tunnels in production you should use a pre-created named tunnel by following: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps"}
+{"level":"info","time":"2023-10-02T17:51:25Z","message":"Requesting new quick Tunnel on trycloudflare.com..."}
+{"level":"info","time":"2023-10-02T17:51:32Z","message":"+--------------------------------------------------------------------------------------------+"}
+{"level":"info","time":"2023-10-02T17:51:32Z","message":"|  Your quick Tunnel has been created! Visit it at (it may take some time to be reachable):  |"}
+{"level":"info","time":"2023-10-02T17:51:32Z","message":"|  https://tion-positioning-newman-transmission.trycloudflare.com                            |"}
+{"level":"info","time":"2023-10-02T17:51:32Z","message":"+--------------------------------------------------------------------------------------------+"}
+{"level":"info","time":"2023-10-02T17:51:32Z","message":"Cannot determine default configuration path. No file [config.yml config.yaml] in [~/.cloudflared ~/.cloudflare-warp ~/cloudflare-warp /etc/cloudflared /usr/local/etc/cloudflared]"}
+{"level":"info","time":"2023-10-02T17:51:32Z","message":"Version 2023.8.2"}
+{"level":"info","time":"2023-10-02T17:51:32Z","message":"GOOS: linux, GOVersion: go1.20.6, GoArch: amd64"}
+{"level":"info","time":"2023-10-02T17:51:32Z","message":"Settings: map[ha-connections:1 logfile:.server/.cld.log protocol:quic url:127.0.0.1:8080]"}
+{"level":"info","time":"2023-10-02T17:51:32Z","message":"Generated Connector ID: a3a62553-33e8-48f5-9c47-1a0c92070df4"}
+{"level":"info","autoupdateFreq":86400000,"time":"2023-10-02T17:51:32Z","message":"Autoupdate frequency is set"}
+{"level":"info","time":"2023-10-02T17:51:32Z","message":"Initial protocol quic"}
+{"level":"info","time":"2023-10-02T17:51:32Z","message":"ICMP proxy will use 10.0.2.15 as source for IPv4"}
+{"level":"info","time":"2023-10-02T17:51:32Z","message":"ICMP proxy will use fe80::f693:a5f2:6bab:adb2 in zone eth0 as source for IPv6"}
+{"level":"warn","error":"Group ID 0 is not between ping group 1 to 0","time":"2023-10-02T17:51:32Z","message":"The user running cloudflared process has a GID (group ID) that is not within ping_group_range. You might need to add that user to a group within that range, or instead update the range to encompass a group the user is already in by modifying /proc/sys/net/ipv4/ping_group_range. Otherwise cloudflared will not be able to ping this network"}
+{"level":"warn","error":"cannot create ICMPv4 proxy: Group ID 0 is not between ping group 1 to 0 nor ICMPv6 proxy: socket: permission denied","time":"2023-10-02T17:51:32Z","message":"ICMP proxy feature is disabled"}
+{"level":"info","time":"2023-10-02T17:51:33Z","message":"Starting metrics server on 127.0.0.1:46121/metrics"}
+{"level":"info","event":0,"connection":"4ec7e9fe-3b01-4af9-8e8d-0ceee2fa811b","connIndex":0,"location":"lim02","ip":"198.41.192.67","protocol":"quic","time":"2023-10-02T17:51:34Z","message":"Registered tunnel connection"}
+{"level":"info","time":"2023-10-02T17:52:12Z","message":"Initiating graceful shutdown due to signal interrupt ..."}
+{"level":"info","event":0,"connIndex":0,"ip":"198.41.192.67","time":"2023-10-02T17:52:12Z","message":"Unregistered tunnel connection"}
+{"level":"error","event":0,"ip":"198.41.192.67","connIndex":0,"error":"context canceled","time":"2023-10-02T17:52:12Z","message":"Failed to serve quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.67","connIndex":0,"time":"2023-10-02T17:52:12Z","message":"Retrying connection in up to 1s"}
+{"level":"error","time":"2023-10-02T17:52:12Z","message":"no more connections active and exiting"}
+{"level":"info","time":"2023-10-02T17:52:12Z","message":"Tunnel server stopped"}
+{"level":"info","time":"2023-10-02T17:52:12Z","message":"Metrics server stopped"}
